@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<script language="javascript">
+    function dice(){
+        let winx = 6;
+        let x = Math.random()
+        let y = Math.floor((x*(6-1+1))+1);
+        let str="";
+        str="dice-"+y+".jpg";
+        document.getElementById("dice1").src=str;
+        let x2 = Math.random()
+        let y2 = Math.floor((x2*(6-1+1))+1);
+        // document.getElementById("rs").innerHTML=y2;
+        str="";
+        str="dice-"+y2+".jpg";
+        document.getElementById("dice2").src=str;
+        if(y>y2){
+            document.getElementById("rs").innerHTML="player 1 win";
+        }else{
+            document.getElementById("rs").innerHTML="player 2 win";
+
+        }
+         
+        if(y==y2){
+            document.getElementById("rs").innerHTML="draw"
+        }
+        
+        
+       
+        
+        
+        
+      
+        
+    }
+</script>
+<body>
+    <table align="center">
+
+        <tr>
+            <td align="center">
+                <label for="p1x" >Player 1</label>
+            </td>
+            <td align="center">
+                <label for="px">Player 2</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="dice-1.jpg" id="dice1" height="250px" width="250px">
+            </td>
+            <td>
+                <img src="dice-1.jpg" id="dice2" height="250px" width="250px">
+            </td>
+        </tr>
+    </table>
+    <button id="btn" onclick="dice()" >dice player 1</button>
+    <p id="rs"></p>
+</body>
+</html>
